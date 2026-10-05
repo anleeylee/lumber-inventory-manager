@@ -18,7 +18,7 @@
 ## 安装
 
 ```bash
-git clone <your-repo-url> 04-lumber-inventory-manager
+git clone https://github.com/anleeylee/lumber-inventory-manager 04-lumber-inventory-manager
 cd 04-lumber-inventory-manager
 npm install
 npm run build        # 编译到 dist/

@@ -53,7 +53,7 @@ and the [Lumber Size Chart](https://boardfootcalc.net/lumber-size-chart/).
 ## Install
 
 ```bash
-git clone <your-repo-url> bfc-inventory
+git clone https://github.com/anleeylee/lumber-inventory-manager bfc-inventory
 cd bfc-inventory
 npm install
 npm run build
