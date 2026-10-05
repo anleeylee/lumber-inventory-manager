@@ -1,0 +1,44 @@
+{
+  "name": "@boardfootcalc/lumber-inventory-manager",
+  "version": "1.0.0",
+  "description": "Offline lumber inventory database with a full transaction ledger — receive, search, reserve, allocate, consume, scrap, and roll offcuts back into stock. SQLite-backed, negative inventory impossible.",
+  "type": "commonjs",
+  "main": "dist/features/index.js",
+  "bin": {
+    "bfc-inventory": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "sample-data"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "start": "node --disable-warning=ExperimentalWarning dist/cli.js",
+    "demo": "node --disable-warning=ExperimentalWarning dist/cli.js demo"
+  },
+  "keywords": [
+    "lumber",
+    "inventory",
+    "sqlite",
+    "board-foot",
+    "woodworking",
+    "offcut",
+    "warehouse",
+    "ledger"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "xlsx": "^0.18.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.8"
+  }
+}
