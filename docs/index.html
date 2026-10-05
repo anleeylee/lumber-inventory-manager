@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lumber-inventory-manager — Lumber Inventory Manager | Lumber Board Foot Tools</title>
+<meta name="description" content="Offline-first SQLite lumber inventory with a full transaction ledger. Natural-language search, project allocation, consumption and automatic offcut re-entry.">
+<meta name="keywords" content="lumber, board feet, woodworking, bfc-inventory, Lumber, Inventory, Manager, cut list, kerf, waste, wood shop, diy">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "lumber-inventory-manager",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "description": "Offline-first SQLite lumber inventory with a full transaction ledger. Natural-language search, project allocation, consumption and automatic offcut re-entry.",
+  "url": "https://github.com/anleeylee/lumber-inventory-manager",
+  "author": { "@type": "Organization", "name": "BoardFootCalc", "url": "https://boardfootcalc.net" },
+  "softwareVersion": "1.0.0",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.6; color: #222; background: #fff; }
+  header { background: #1f2d3d; color: #fff; padding: 40px 20px; }
+  header h1 { margin: 0 0 8px; font-size: 28px; }
+  header p { margin: 0; opacity: .92; max-width: 860px; }
+  main { max-width: 880px; margin: 0 auto; padding: 24px 20px 48px; }
+  h2 { border-bottom: 2px solid #eee; padding-bottom: 6px; margin-top: 36px; }
+  code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-size: .92em; }
+  pre { background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 14px; overflow-x: auto; }
+  pre code { background: none; padding: 0; }
+  ul { padding-left: 22px; }
+  .links a { margin-right: 14px; white-space: nowrap; }
+  .badge { display: inline-block; background: #eef2f6; border: 1px solid #d4dae2; color: #444; border-radius: 12px; padding: 2px 10px; font-size: 13px; margin: 0 6px 6px 0; }
+  footer { border-top: 1px solid #eee; color: #777; font-size: 14px; padding: 18px 20px 40px; text-align: center; }
+  footer a { color: #1a73e8; }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; }
+    body { background: #0d1117; color: #e6edf3; }
+    header { background: #161b22; border-bottom: 1px solid #30363d; }
+    h2 { border-bottom-color: #30363d; }
+    code, pre { background: #161b22; }
+    pre { border-color: #30363d; }
+    .badge { background: #21262d; border-color: #30363d; color: #c9d1d9; }
+    footer { border-top-color: #30363d; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Lumber Inventory Manager</h1>
+  <p>An offline-first lumber inventory database with a <strong>full transaction ledger</strong>. Receive boards, search in plain English, reserve and allocate stock to projects, consume boards on the saw, and watch every offcut automatically roll back into inventory. SQLite-backed — negative inventory is impossible by construction.</p>
+  <p style="margin-top:14px">
+    <span class="badge">TypeScript</span><span class="badge">Node.js ≥ 22.5</span><span class="badge">MIT License</span><span class="badge">15 tests</span>
+  </p>
+</header>
+<main>
+  <section>
+    <p>Part of the open-source <a href="https://boardfootcalc.net">BoardFootCalc</a> desktop tool suite — the same board-foot math as the
+    <a href="https://boardfootcalc.net">online lumber calculators</a>, offline and scriptable on your own machine.</p>
+  </section>
+
+  <h2>Features</h2>
+  <ul><li><strong>SQLite storage</strong> via Node’s built-in <code>node:sqlite</code> — zero native compilation, one <code>.db</code> file per yard.</li>
+<li><strong>Transaction ledger</strong> — every add / edit / move / reserve / allocate / release / consume / scrap / sell writes a ledger entry with the previous and next item snapshot.</li>
+<li><strong>Natural-language search</strong> — <code>"find boards at least 8/4 x 10 x 72 walnut"</code> parses to thickness ≥ 2", width ≥ 10", length ≥ 72", species walnut.</li>
+<li><strong>Projects & allocation</strong> — reserve → allocate → release, with Required BF / Available Matching BF / Shortfall / Potential Waste computed before you commit anything.</li>
+<li><strong>Consumption & offcuts</strong> — consume a length from a board; the remainder re-enters stock as a new offcut item linked to its parent.</li>
+<li><strong>Status model</strong> — <code>AVAILABLE → RESERVED → ALLOCATED → CUT</code>, plus <code>SCRAP</code> / <code>SOLD</code>, guarded transitions only.</li></ul>
+
+  <h2>Quick start</h2>
+  <pre><code>npm run demo
+bfc-inventory search "at least 8/4 x 10 x 60 walnut"</code></pre>
+  <p>Full CLI reference, input formats and design notes are in the <a href="https://github.com/anleeylee/lumber-inventory-manager">repository README</a>.</p>
+
+  <h2>Learn the math</h2>
+  <p>[Hardwood Board Foot Calculator](https://boardfootcalc.net/hardwood-board-foot-calculator/) · [How to Buy Lumber by Board Foot](https://boardfootcalc.net/how-to-buy-lumber-by-board-foot/) · [Lumber Size Chart](https://boardfootcalc.net/lumber-size-chart/)</p>
+
+  <h2>学习资料（中文）</h2>
+  <p>[硬木板尺计算器](https://boardfootcalc.net/hardwood-board-foot-calculator/) · [如何按板尺购买木材](https://boardfootcalc.net/how-to-buy-lumber-by-board-foot/) · [木材尺寸表](https://boardfootcalc.net/lumber-size-chart/)</p>
+</main>
+<footer>
+  <a href="https://boardfootcalc.net">BoardFootCalc.net</a> — free board foot calculators, lumber guides and woodworking tools · MIT licensed open-source project.
+</footer>
+</body>
+</html>
