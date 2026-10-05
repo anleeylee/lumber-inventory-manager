@@ -134,7 +134,7 @@ and why — the audit trail for a workshop that wants to trust its numbers.
 ## Engine
 
 Frozen copy of the shared
-[BoardFootCalc Desktop Lumber Calculation Engine](https://boardfootcalc.net/) in `src/core/`
+[BoardFootCalc Desktop Lumber Calculation Engine](https://boardfootcalc.net/hardwood-board-foot-calculator/) in `src/core/`
 — board foot math, units and thickness parsing match the
 [online calculators](https://boardfootcalc.net/hardwood-board-foot-calculator/).
 

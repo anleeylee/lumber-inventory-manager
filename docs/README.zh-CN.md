@@ -1,6 +1,6 @@
 # bfc-inventory — 木材库存管理器
 
-> 英文原版：[English](../README.md) · 在线计算器：[https://boardfootcalc.net](https://boardfootcalc.net/)
+> 英文原版：[English](../README.md) · 在线计算器：[https://boardfootcalc.net/hardwood-board-foot-calculator/](https://boardfootcalc.net/hardwood-board-foot-calculator/)
 
 一个离线优先的木材库存数据库，带有**完整的交易流水账**。收货入库、用自然语言搜索、为项目预留和分配库存、在锯台上消耗板材，余料自动回库。基于 SQLite — 结构上杜绝负库存。
 
@@ -36,7 +36,7 @@ bfc-inventory search "at least 8/4 x 10 x 60 walnut"
 
 ## 计算引擎
 
-本工具内置了共享的 [BoardFootCalc Desktop 木材计算引擎](https://boardfootcalc.net)
+本工具内置了共享的 [BoardFootCalc Desktop 木材计算引擎](https://boardfootcalc.net/hardwood-board-foot-calculator/)
 的冻结副本（位于 `src/core/`，涵盖板尺、单位、标称/实际厚度、四分之一厚度、
 浪费系数、木种、计价与 CSV）。五个工具共用同一套数学逻辑，因此这里算出的数字
 与网站上的在线计算器完全一致。
